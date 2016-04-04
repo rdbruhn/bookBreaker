@@ -4,7 +4,6 @@ angular.module('bookBreaker',[])
   var calcDays = function(dueDate){
     //get difference between due date and today
     console.log("calcDays");
-    debugger
     var today = new Date();
     var due = dueDate;
     var diff = (due - today)/1000;
@@ -18,14 +17,18 @@ angular.module('bookBreaker',[])
     //calculate days per each day and return array of objects
     console.log("getRanges");
     var results = [];
-    var page = 1;
-    var date, range;
+    var page = 0;
+    var date, range, endRange;
     var pagesPerDay = Math.floor(pages/days);
     for(var day = 1; day <= days; day++){
       endRange = page + pagesPerDay;
-      range = page + "-" + endRange;
+      if(!(endRange <= pages)){
+        endRange = pages;
+      }
+      range = (page + 1) + "-" + endRange;
       date = moment().add(day,'days').calendar();
       results.push({range: range, date: date});
+      page = endRange;
     }
     return results;
   };
