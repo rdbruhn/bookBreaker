@@ -9,13 +9,11 @@ angular.module('bookBreaker',[])
     var diff = (due - today)/1000;
     diff = Math.abs(Math.floor(diff));
     var days = Math.floor(diff/(24*60*60));
-    console.log(days);
     return days;
   };
   //add function to divide pages by days
   var getRanges = function(days, pages){
     //calculate days per each day and return array of objects
-    console.log("getRanges");
     var results = [];
     var page = 0;
     var date, range, endRange;
@@ -34,7 +32,6 @@ angular.module('bookBreaker',[])
   };
   //add function to create list item array with ranges and dates
   var buildList = function(dueDate, totalPages){
-    console.log("buildList");
     var totalDays = calcDays(dueDate);
       return getRanges(totalDays, totalPages);
     };
@@ -44,7 +41,6 @@ angular.module('bookBreaker',[])
   $scope.book = {};
   $scope.breakBook = function(){
     //send book data to factory and return array of check list objects
-    console.log("breakBook");
   $scope.data = breakFactory.buildList($scope.book.dueDate, $scope.book.pages);
   };
 });
