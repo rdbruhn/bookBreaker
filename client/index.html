@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>BookBreaker</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="style.css"/>
   <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
@@ -30,11 +31,11 @@
       <div class="col-md-12">
         <h2>{{book.name}}</h2>
         <h3 ng-if="book.pages">{{book.pages + " Pages"}}</h3>
-        <h4>{{book.dueDate}}</h4>
+        <h4>{{book.formatDueDate}}</h4>
       </div>
     </div>
     <div class="row" ng-repeat="item in data">
-      <div class="col-md-2">IMG</div>
+      <div class="col-md-2"><img class="book"src="img/book_PNG2116.png"/></div>
       <div class="col-md-4">{{item.range}}</div>
       <div class="col-md-4">{{item.date}}</div>
     </div>
