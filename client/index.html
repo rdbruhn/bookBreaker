@@ -7,6 +7,7 @@
   <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="lib/moment.min.js"></script>
   <script src="bookBreaker.js"></script>
 
 </head>
@@ -26,9 +27,13 @@
       </form>
     </div>
     <div class="row">
-      <div class="col-md-12">{{book}}</div>
+      <div class="col-md-12">
+        <h2>{{book.name}}</h2>
+        <h3 ng-if="book.pages">{{book.pages + " Pages"}}</h3>
+        <h4>{{book.dueDate}}</h4>
+      </div>
     </div>
-    <div class="row"ng-repeat="item in data">
+    <div class="row" ng-repeat="item in data">
       <div class="col-md-2">IMG</div>
       <div class="col-md-4">{{item.range}}</div>
       <div class="col-md-4">{{item.date}}</div>
