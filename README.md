@@ -1,7 +1,5 @@
-## BookBreaker ##  
-
-## A Simple Reading Plan Generator ##
-   >For anyone who needs to get their reading done by a specific date.
+## BookBreaker 
+  >A Simple Reading Plan Generator for anyone who needs to get their reading done by a specific date.
 
 ## Summary ##
   > BookBreaker is a reading plan generator that will take in the total pages of a book or assingment and due date. It will break up the reading and give you a handy check list of page ranges and due dates necessary to complete the all reading by the due date given.
