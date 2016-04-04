@@ -1,0 +1,23 @@
+{
+  "name": "book_breaker",
+  "version": "1.0.0",
+  "description": "A reading plan generator for a specific due date",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdbruhn/bookBreaker.git"
+  },
+  "keywords": [
+    "reading"
+  ],
+  "author": "Rob Bruhn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rdbruhn/bookBreaker/issues"
+  },
+  "homepage": "https://github.com/rdbruhn/bookBreaker#readme"
+}
