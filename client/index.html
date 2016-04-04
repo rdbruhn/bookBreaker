@@ -4,7 +4,14 @@
   <meta charset="UTF-8">
   <title>BookBreaker</title>
 </head>
-<body>
+<body ng-app="bookBreaker">
   <h1>BookBreaker</h1>
+  <div ng-controller="breakController">
+    <form ng-submit='breakBook()'>
+      <input type='text' name="bookname" placeholder="Enter your book name..."  ng-model="book.name"></input>
+      <input type='number' name="pages" placeholder="Enter total pages to read" ng-model="book.pages"></input>
+      <input type='date' name="date" placeholder="Enter due date" ng-model="book.dueDate"></input>
+    </form>
+  </div>
 </body>
 </html>
