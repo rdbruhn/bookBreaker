@@ -3,14 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>BookBreaker</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
 </head>
 <body ng-app="bookBreaker">
-  <h1>BookBreaker</h1>
-  <div ng-controller="breakController">
-    <form ng-submit='breakBook()'>
-      <input type='text' name="bookname" placeholder="Enter your book name..."  ng-model="book.name"></input>
-      <input type='number' name="pages" placeholder="Enter total pages to read" ng-model="book.pages"></input>
-      <input type='date' name="date" placeholder="Enter due date" ng-model="book.dueDate"></input>
+  
+  <div class="container" ng-controller="breakController">
+    <h1>BookBreaker</h1>
+    <form class="form-group"ng-submit='breakBook()'>
+      <label for="name">Book Name</label>
+      <input class="form-control" type='text' id='name' name="bookname" placeholder="Enter your book name..."  ng-model="book.name">
+      <label for="pages">Total Page Count</label>
+      <input class="form-control" type='number' id='pages' name="pages" placeholder="Enter number of pages" ng-model="book.pages">
+      <label for="date">Due Date</label>
+      <input class="form-control" type='date' id='date' name="date" ng-model="book.dueDate">
+      <br>
+      <button class="btn btn-default">Break my Book!</button>
     </form>
   </div>
 </body>
