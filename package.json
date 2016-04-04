@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/rdbruhn/bookBreaker#readme",
   "dependencies": {
+    "angular": "^1.5.3",
     "express": "^4.13.4"
   }
 }
