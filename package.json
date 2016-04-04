@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/rdbruhn/bookBreaker/issues"
   },
-  "homepage": "https://github.com/rdbruhn/bookBreaker#readme"
+  "homepage": "https://github.com/rdbruhn/bookBreaker#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+  }
 }
