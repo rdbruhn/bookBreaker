@@ -14,14 +14,11 @@ angular.module('bookBreaker',[])
     var page = 0;
     var date, range, endRange;
     var pagesPerDay = Math.floor(pages/days);
-    
+
     for(var day = 0; day <= days; day++){
       endRange = page + pagesPerDay;
-      if(!(endRange <= pages)){
+      if(endRange >= pages){
         endRange = pages;
-      }
-      if(pages - endRange < pagesPerDay){
-        endRange += pages - endRange;
       }
       range = (page + 1) + "-" + endRange;
       date = moment().add(day,'days').calendar('MM/DD/YYYY');
