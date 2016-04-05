@@ -1,12 +1,15 @@
 var express = require('express');
-
+var mongoose = require('mongoose');
+var Users
 var app = express();
 
 var port = process.env.PORT || 8000;
 
 //add database functionality later for storing users and reading plans
+var URI = process.env.MONGOLAB_URI || "mongodb://localhost/bookBreakerDB";
+mongoose.connect(URI);
+//TODO: add express session
 
-//add express session
 app.use(express.static(__dirname + '/client'));
 
 app.get('/', function(req,res){
