@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/rdbruhn/bookBreaker#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "bcrypt": "^0.8.5",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.11"
   }
 }
