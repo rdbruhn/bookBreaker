@@ -22,7 +22,7 @@ angular.module('bookBreaker',[])
       }
       range = (page + 1) + "-" + endRange;
       date = moment().add(day,'days').calendar('MM/DD/YYYY');
-      results.push({range: range, date: date});
+      results.push({range: range, date: date, completed: false, pageCount: endRange-page});
       page = endRange;
     }
     return results;
@@ -40,5 +40,11 @@ angular.module('bookBreaker',[])
     //send book data to factory and return array of check list objects
   $scope.data = breakFactory.buildList($scope.book.dueDate, $scope.book.pages);
   $scope.book.formatDueDate = moment($scope.book.dueDate).format('MM/DD/YYYY');
+  };
+
+  $scope.completeTask = function(item){
+    item.myStyle = {'text-decoration':'line-through'};
+    $scope.book.pages-= item.pageCount;
+    item.pageCount = 0;
   };
 });
