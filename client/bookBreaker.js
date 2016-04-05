@@ -1,7 +1,8 @@
 angular.module('bookBreaker',[
-  'bookBreaker.auth',
+  'bookBreaker.authTools',
   'bookBreaker.breakTools',
   'bookBreaker.breaker',
+  'bookBreaker.auth',
   'ngRoute'
 ])
 .config(function ($routeProvider) {
@@ -20,7 +21,7 @@ angular.module('bookBreaker',[
     })
     .when('/app', {
       templateUrl: 'views/app.html',
-      controller: 'breakController',
+      controller: 'breakController'
     });
 });
 

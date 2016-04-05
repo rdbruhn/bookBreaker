@@ -1,5 +1,5 @@
 angular.module('bookBreaker.authTools',[])
-.factory('AuthFactory', function(){
+.factory('AuthFactory',function(){
   var currentUser = {};
   var login = function(user, url){
     return $http({
@@ -13,5 +13,5 @@ angular.module('bookBreaker.authTools',[])
       return resp.data;
     });
   };
-
+  return{login:login};
 });
