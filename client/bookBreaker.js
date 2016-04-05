@@ -15,9 +15,9 @@ angular.module('bookBreaker',[])
     var date, range, endRange;
     var pagesPerDay = Math.floor(pages/days);
 
-    for(var day = 0; day <= days; day++){
+    for(var day = 0; day < days; day++){
       endRange = page + pagesPerDay;
-      if(endRange >= pages){
+      if(endRange >= pages|| day === days-1){
         endRange = pages;
       }
       range = (page + 1) + "-" + endRange;
