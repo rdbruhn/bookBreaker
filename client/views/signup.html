@@ -1,0 +1,28 @@
+<div class="container-fluid" ng-controller="AuthController">
+  <div class="row">
+    <div class="col-md-12 header"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h1>BookBreaker</h1>
+      <form class="form-group" ng-submit='signUp()'>
+        <label for="name">Username</label>
+        <input class="form-control" type='text' id='username' name="username" placeholder="Create a username"  ng-model="user.username">
+        <label for="pages">Password</label>
+        <input class="form-control" type='text' id='password' name="password" placeholder="Enter password here" ng-model="user.password">
+        <br>
+        <button class="btn btn-default">Sign Up</button>
+      </form>
+      <div>Already have an account?
+        <a href="#/signin">
+          <button class="btn btn-default">Sign-In</button>
+        </a>
+      </div>
+      <div>Skip login?
+        <a href="#/app">
+          <button class="btn btn-default">Go To App</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
