@@ -14,16 +14,27 @@ angular.module('bookBreaker',[])
     var page = 0;
     var date, range, endRange;
     var pagesPerDay = Math.floor(pages/days);
-
+    var remainder = pages%days;
+    var splitRem = Math.floor(remainder/days) || 1;
     for(var day = 0; day < days; day++){
       endRange = page + pagesPerDay;
+      if(remainder && remainder > splitRem){
+        endRange += splitRem;
+        remainder -= splitRem;
+      }else{
+        endRange += remainder;
+        remainder -= remainder;
+      }
       if(endRange >= pages|| day === days-1){
         endRange = pages;
       }
       range = (page + 1) + "-" + endRange;
-      date = moment().add(day,'days').calendar('MM/DD/YYYY');
-      results.push({range: range, date: date, completed: false, pageCount: endRange-page});
-      page = endRange;
+
+      if(endRange !== page){
+        date = moment().add(day,'days').calendar('MM/DD/YYYY');
+        results.push({range: range, date: date, completed: false, pageCount: endRange-page});
+        page = endRange;
+      }
     }
     return results;
   };
@@ -45,6 +56,7 @@ angular.module('bookBreaker',[])
   $scope.completeTask = function(item){
     item.myStyle = {'text-decoration':'line-through'};
     $scope.book.pages -= item.pageCount;
+    item.completed = true;
     item.pageCount = 0;
   };
 });
