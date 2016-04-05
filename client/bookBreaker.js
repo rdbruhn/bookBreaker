@@ -44,7 +44,7 @@ angular.module('bookBreaker',[])
 
   $scope.completeTask = function(item){
     item.myStyle = {'text-decoration':'line-through'};
-    $scope.book.pages-= item.pageCount;
+    $scope.book.pages -= item.pageCount;
     item.pageCount = 0;
   };
 });
