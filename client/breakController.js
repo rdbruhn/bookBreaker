@@ -8,9 +8,14 @@ angular.module('bookBreaker.breaker',[])
   };
 
   $scope.completeTask = function(item){
-    item.myStyle = {'text-decoration':'line-through'};
-    $scope.book.pages -= item.pageCount;
-    item.completed = true;
-    item.pageCount = 0;
+    if(!item.completed){
+      item.myStyle = {'text-decoration':'line-through'};
+      $scope.book.pages -= item.pageCount;
+      item.completed = true;
+    }else{
+      item.myStyle = {'text-decoration':'none'};
+      $scope.book.pages += item.pageCount;
+      item.completed = false;
+    }
   };
 });
