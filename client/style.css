@@ -1,7 +1,16 @@
+body{
+  font-family: monospace;
+}
 .book{
   height: 20px;
 }
 
 .completed{
   text-decoration: line-through;
+}
+
+.header{
+  background-image: url("img/books_old.jpg");
+  background-size: cover;
+  height: 200px;
 }
