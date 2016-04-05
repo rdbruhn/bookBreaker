@@ -5,7 +5,7 @@ angular.module('bookBreaker',[])
     //get difference between due date and today
     var today = moment();
     dueDate = moment(new Date(dueDate));
-    return dueDate.diff(today,'days');
+    return dueDate.diff(today,'days')+1;
   };
   //add function to divide pages by days
   var getRanges = function(days, pages){
