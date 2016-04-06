@@ -1,6 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var Users
+// var Users = require('./userController.js');
 var app = express();
 
 var port = process.env.PORT || 8000;
@@ -17,9 +17,9 @@ app.get('/', function(req,res){
 });
 
 app.post('#/signin', function(req,res){
-  //if !user create
-    //compare passwords
-      //request session
+  Users.signIn(req, res, function(){
+    res.render('#/app');
+  });
 });
 
 app.post('#/signup', function(req,res){
